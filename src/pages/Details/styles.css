@@ -1,0 +1,13 @@
+.destaque {
+    background-color: white;
+    color: black; 
+    justify-content: space-between;
+    padding: 16px; 
+    border-radius: 32px;
+    line-height: 1.5;
+}
+.section {
+    margin: 20px; /* Adiciona uma margem de 20 pixels em todos os lados da section */
+    padding: 10px; /* Adiciona um preenchimento interno de 10 pixels em todos os lados da section (opcional) */
+    border: 1px solid #ccc; /* Adiciona uma borda para visualização */
+}
