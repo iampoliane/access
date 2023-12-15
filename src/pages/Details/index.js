@@ -15,6 +15,7 @@ export function Details(){
                 <p><b>Descrição: <span>{TvShow.description}</span></b></p>
                 <br></br>
             </section>
+            <a href="/" class="button-link">Voltar para Tela Inicial</a>
         </div>
 )
 }

@@ -15,6 +15,16 @@ export function Dashboard() {
   };
 
   return (
+      <div className="container">
+            {schedules.map((schedule)=> (
+                <Link className="card" key={schedule.id} to={schedule.id}>
+                    <span>{schedule.name}</span>
+                    <span>{schedule.time.start} - {schedule.time.end}</span>
+                </Link>
+            ))}
+            <a href="/Form" class="button-link">Adicionar Programa de TV</a>
+            
+        </div>
     <div>
       <div className="search-bar">
         <input
@@ -29,8 +39,7 @@ export function Dashboard() {
         {filteredSchedules.map((schedule) => (
           <Link className="card" key={schedule.id} to={schedule.id}>
             <span>{schedule.name}</span>
-            <span>
-              {schedule.time.start} - {schedule.time.end}
+            <span>{schedule.time.start} - {schedule.time.end}
             </span>
           </Link>
         ))}

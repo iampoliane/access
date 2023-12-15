@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Component } from 'react';
 import { Details } from './pages/Details';
+import { Form } from './pages/Form';
 
 function App() {
   return (
@@ -12,9 +13,9 @@ function App() {
     <Routes>
       <Route path='/' element={<Dashboard/>}/>
       <Route path='/:id' element={<Details/>}/>
+      <Route path='/form' element={<Form/>}/>
     </Routes>
     </BrowserRouter>
   );
-}
-
+  }
 export default App;
