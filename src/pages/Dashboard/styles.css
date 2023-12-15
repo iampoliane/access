@@ -28,7 +28,6 @@
 .search-bar {
   display: flex;
   align-items: center;
-  background-color: #ffffff; 
   padding: 10px; 
   margin-bottom: 20px; 
 }
@@ -37,7 +36,6 @@
     flex: 1; 
     padding: 10px; 
     margin-right: 10px; 
-    border: 2px solid #000000; 
     border-radius: 32px; 
 }
   
