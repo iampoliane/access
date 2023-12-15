@@ -11,3 +11,17 @@
     padding: 10px; /* Adiciona um preenchimento interno de 10 pixels em todos os lados da section (opcional) */
     border: 1px solid #ccc; /* Adiciona uma borda para visualização */
 }
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #000000;
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 32px;
+    margin-top: 10px;
+    text-align: center;
+  }

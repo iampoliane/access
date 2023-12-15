@@ -11,6 +11,8 @@ export function Dashboard() {
                     <span>{schedule.time.start} - {schedule.time.end}</span>
                 </Link>
             ))}
+            <a href="/Form" class="button-link">Adicionar Programa de TV</a>
+            
         </div>
     )
 }
