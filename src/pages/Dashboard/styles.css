@@ -18,3 +18,16 @@
     gap: 16px;
 
 }
+
+.add-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid gray; /* Cor da borda */
+    color: white; /* Cor do texto */
+    background-color: black; /* Cor de fundo */
+    border-radius: 32px; /* Borda arredondada */
+}
