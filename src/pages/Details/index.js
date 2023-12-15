@@ -1,16 +1,27 @@
 import "./styles.css"
 import React from 'react';
 import api from '../../services/api';
+import { useParams } from "react-router-dom";
 
 
 export function Details(){
+      const params = useParams();
+
         const [TvShow, setTvShow] = React.useState(null);
+
+        const getTvShowById = React.useCallback(async () => {
+          try {
+            const response = await api.get(`/details/${params.id}`)
+
+          setTvShow(response.data)
+          } catch (error) {
+            
+          }
+        }, [params.id])
       
         React.useEffect(() => {
-          api.get(api.baseUrl).then((response) => {
-            setTvShow(response.data);
-          });
-        }, []);
+          getTvShowById()
+        }, [getTvShowById]);
       
         if (!TvShow) return null;
 
