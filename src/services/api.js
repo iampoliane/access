@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://localhost/4101',
+  baseURL: 'http://localhost:4101/tvshow',
 });
 
 export default api;
