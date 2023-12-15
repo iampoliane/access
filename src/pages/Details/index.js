@@ -1,6 +1,19 @@
-import {TvShow} from "./mock.js"
 import "./styles.css"
+import React from 'react';
+import api from '../../services/api';
+
+
 export function Details(){
+        const [TvShow, setTvShow] = React.useState(null);
+      
+        React.useEffect(() => {
+          api.get(api.baseUrl).then((response) => {
+            setTvShow(response.data);
+          });
+        }, []);
+      
+        if (!TvShow) return null;
+
     return (
         <div className="container">
             <section class="destaque">
