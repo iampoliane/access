@@ -51,7 +51,7 @@ export function Dashboard() {
         </button>
       </div>
       {filteredSchedule.map(schedule => (
-        <Link className="card" key={schedule.id} to={schedule.id}>
+        <Link className="card" key={schedule.id} to={String(schedule.id)}>
           <span>{schedule.name}</span>
           <span>
             {schedule.dateTime} - {schedule.dateTime}
