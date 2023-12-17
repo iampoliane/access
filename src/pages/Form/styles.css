@@ -1,74 +1,81 @@
 .form-container {
-    width: 100%;
-    margin-bottom: 20px;
-    max-width: 600px; /* Defina a largura máxima desejada */
-    margin: 0 auto; /* Centraliza o formulário na página */
-    padding: 20px;
-    background-color: #ffffff;
-    border: 2px solid #000000;
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  label {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    color: #000000;
-  }
-  
-  input,
-  textarea {
-    width: 100%; /* Preenche toda a largura do contêiner */
-    padding: 10px;
-    margin-top: 5px;
-    border: 2px solid #000000;
-    border-radius: 5px;
-  }
-  
-  .button-link {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    border: 2px solid #000000;
-    color: #ffffff;
-    background-color: #000000;
-    border-radius: 32px;
-    margin-top: 10px;
-    text-align: center;
-  }
-  
-  .button-link:hover {
-    background-color: #333333;
-  }
-  
+  width: 100%;
+  margin-bottom: 20px;
+  max-width: 600px; /* Set the desired maximum width */
+  margin: 0 auto; /* Centers the form on the page */
+  padding: 26px;
+  background-color: #ffffff;
+  /* border: 2px solid #000000; */
+  border-radius: 10px;
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Makes the form take up the entire width */
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  color: #000000;
+  text-align: left; /* Aligns the text to the left */
+  width: 100%
+}
+
+input,
+textarea {
+  width: 100%; /* Fills the entire width of the container */
+  padding: 10px;
+  margin-top: 5px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #000000;
+  color: #ffffff;
+  background-color: #000000;
+  border-radius: 32px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.button-link:hover {
+  background-color: #333333;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap; /* Adds line break on smaller screens */
+}
+
+.form-container {
+  width: 48%; /* Sets the width of the forms, leaving some space for margins */
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
   .form-wrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; /* Adiciona quebra de linha em telas menores */
-  }
-  
-  .form-container {
-    width: 48%; /* Define a largura dos formulários, dando algum espaço para margens */
-    margin-bottom: 20px;
-  }
-  
-  @media (max-width: 768px) {
-    .form-wrapper {
       flex-direction: column;
-    }
-  
-    .form-container {
-      width: 100%;
-    }
   }
-  
+
+  .form-container {
+      width: 100%;
+  }
+}

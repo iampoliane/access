@@ -38,7 +38,7 @@ export function Form() {
   };
 
   return (
-    <div>
+    <div className="form-wrapper">
       <div className="form-container">
         <h2>Adicionar Detalhes</h2>
         <form onSubmit={handleFormSubmit}>
