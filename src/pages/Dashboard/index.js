@@ -1,4 +1,4 @@
-// import { schedules } from "./mock.js";
+
 import React, {useState} from 'react';
 import './styles.css';
 import {Link} from 'react-router-dom';
@@ -12,14 +12,23 @@ export function Dashboard() {
     schedule.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
+  const searchByName = async (name) => {
+    try {
+      const response = await api.get(`/searchbyname?name=${name}`);
+      setSchedule(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const handleSearch = () => {
     console.log('Pesquisar por:', searchTerm);
+    searchByName(searchTerm);
   };
 
   const getSchedule = React.useCallback(async () => {
     try {
       const response = await api.get('/list');
-
       setSchedule(response.data);
     } catch (error) {}
   }, []);
@@ -31,8 +40,6 @@ export function Dashboard() {
   if (!schedule) {
     return null;
   }
-
-  // const params = useParams();//might not be needy
 
   return (
     <div className="container">
