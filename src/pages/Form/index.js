@@ -1,32 +1,46 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import api from '../../services/api';
 import "./styles.css";
 
 export function Form() {
   const [name, setName] = useState("");
-  const [startTime, setStartTime] = useState("");
-  const [endTime, setEndTime] = useState("");
   const [programDate, setProgramDate] = useState("");
   const [type, setType] = useState("");
   const [recurrence, setRecurrence] = useState("");
   const [description, setDescription] = useState("");
 
+  const submitForm = async () => {
+    try {
+      const response = await api.post('/register', {
+        name: name,
+        dateTime: programDate,
+        type: type,
+        recurrence: recurrence,
+        description: description
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
     console.log("Nome:", name);
-    console.log("Horário Inicial:", startTime);
-    console.log("Horário Final:", endTime);
-    console.log("Data do Programa:", programDate);
+    console.log("Data e horário do Programa:", programDate);
     console.log("Tipo:", type);
     console.log("Recorrência:", recurrence);
     console.log("Descrição:", description);
+
+    submitForm();
   };
 
   return (
     <div>
       <div className="form-container">
-        <h2>Adicionar Horário</h2>
+        <h2>Adicionar Detalhes</h2>
         <form onSubmit={handleFormSubmit}>
           <label>
             Nome:
@@ -36,27 +50,7 @@ export function Form() {
               onChange={(e) => setName(e.target.value)}
             />
           </label>
-          <label>
-            Horário Inicial:
-            <input
-              type="text"
-              value={startTime}
-              onChange={(e) => setStartTime(e.target.value)}
-            />
-          </label>
-          <label>
-            Horário Final:
-            <input
-              type="text"
-              value={endTime}
-              onChange={(e) => setEndTime(e.target.value)}
-            />
-          </label>
         </form>
-      </div>
-
-      <div className="form-container">
-        <h2>Adicionar Detalhes</h2>
         <form onSubmit={handleFormSubmit}>
           <label>
             Data do Programa:
